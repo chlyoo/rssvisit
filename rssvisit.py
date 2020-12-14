@@ -32,12 +32,13 @@ def set_driver():
     options = webdriver.ChromeOptions()
     options.add_argument('headless')
     options.add_argument("window-size=1400,600")
+    options.add_argument("disable-gpu")
     ua = UserAgent()
     a = ua.random
     user_agent = ua.random
     print(user_agent)
     options.add_argument(f'user-agent={user_agent}')
-    return webdriver.Chrome(chrome_options=options)
+    return webdriver.Chrome(options=options)
 
 if __name__ == '__main__':
     print('Starting scraping')
