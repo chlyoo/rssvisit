@@ -30,6 +30,7 @@ def get_rss(url):
 
 def set_driver():
     options = webdriver.ChromeOptions()
+    options.add_argument('headless')
     options.add_argument("window-size=1400,600")
     ua = UserAgent()
     a = ua.random
