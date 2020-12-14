@@ -36,7 +36,7 @@ def set_driver():
     ua = UserAgent()
     a = ua.random
     user_agent = ua.random
-    print(user_agent)
+    # print(user_agent)
     options.add_argument(f'user-agent={user_agent}')
     return webdriver.Chrome(options=options)
 
@@ -45,8 +45,9 @@ if __name__ == '__main__':
     data = get_rss('https://rss.blog.naver.com/webyoukyung.xml')
     # print(data)
     print('Finished scraping')
-    for item in data:
-        wd = set_driver()
+    for i,item in enumerate(data):
+        wd = set_driver() 
+        print(i,'/',len(data), item['title'])
         wd.get(item['link'])
         time.sleep(random.uniform(1,10) * random.randint(1,5))
         wd.quit()
