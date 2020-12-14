@@ -1,7 +1,7 @@
 from selenium import webdriver
-import requests
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
+import requests
 import random
 import time
 
@@ -39,12 +39,10 @@ def set_driver():
     return webdriver.Chrome(chrome_options=options)
 
 if __name__ == '__main__':
-
     print('Starting scraping')
     data = get_rss('https://rss.blog.naver.com/peterscience.xml')
     # print(data)
     print('Finished scraping')
-
     for item in data:
         wd = set_driver()
         wd.get(item['link'])
