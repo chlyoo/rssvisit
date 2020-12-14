@@ -42,7 +42,7 @@ def set_driver():
 
 if __name__ == '__main__':
     print('Starting scraping')
-    data = get_rss('https://rss.blog.naver.com/peterscience.xml')
+    data = get_rss('https://rss.blog.naver.com/webyoukyung.xml')
     # print(data)
     print('Finished scraping')
     for item in data:
