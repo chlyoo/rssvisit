@@ -83,7 +83,7 @@ if __name__ == '__main__':
         try:
             print(' ',i,'/',len(data), item['title'])
             wd.get(item['link'])
-            if "Proxy Type" in WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "p.card-text"))):
+            if item['title'] in WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "body"))):
                 break
         except Exception:
             wd.quit()
